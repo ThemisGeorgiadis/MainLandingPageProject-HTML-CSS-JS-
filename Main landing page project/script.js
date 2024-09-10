@@ -1,8 +1,11 @@
 window.onload = function () {
   var vw = window.innerWidth;
+
+  //hamburger
   const burger_button = document.querySelector(".image");
   const mobile_menu = document.querySelector(".mobile-nav");
   const list = document.querySelector(".mobile-nav ul");
+
   burger_button.addEventListener("click", function () {
     mobile_menu.classList.toggle("is-active");
     list.classList.toggle("is-active");
@@ -14,6 +17,7 @@ window.onload = function () {
     }
   });
 
+  //carousel
   const carousel = document.querySelector(".carousel");
   carousel.addEventListener("mousemove", dragging);
   carousel.addEventListener("mousedown", startDrag);
@@ -36,6 +40,7 @@ window.onload = function () {
     }
   }
 
+  //Dots
   const dot1 = document.getElementById("dot1");
   const dot2 = document.getElementById("dot2");
   const dot3 = document.getElementById("dot3");
@@ -87,13 +92,16 @@ window.onload = function () {
   });
 };
 
+//Email Validation
 function EmailValidation() {
   let EmError = document.getElementById("errorid");
   let EmField = document.querySelector(".Em");
   if (!EmField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
     EmError.style.color = "red";
+    EmField.style.color = "red";
     EmField.placeholder = "Example@SomeMail.com";
   } else {
-    EmError.style.color = "rgb(0,0,0)";
+    EmError.style.color = "rgba(0,0,0,0)";
+    EmField.style.color = "black";
   }
 }
